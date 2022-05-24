@@ -13,16 +13,17 @@ const TaskPage = () => {
     const ListTasksData = () => dispatch( getTasks() );
     const TasksIncomplete = useSelector(state => state.tasks.TasksIncomplete); 
     const TasksComplete = useSelector(state => state.tasks.TasksComplete); 
+    const LoadingAction = useSelector(state => state.tasks.Loading); 
     
     const [ loading, setloading] = useState(true);
      
     useEffect(() => {
-        ListTasksData();
+        if (LoadingAction) ListTasksData();
         setTimeout(() => {
             setloading(false);
         }, 2000);
         // eslint-disable-next-line
-    }, [ TasksIncomplete, TasksComplete ]);
+    }, [ LoadingAction ]);
 
 
     return (

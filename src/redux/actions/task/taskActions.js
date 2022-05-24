@@ -95,7 +95,7 @@ export const deleteTask = (id) => {
     return async (dispatch) => {        
         dispatch({
             type: INITIAL_DELETE_TASK,
-            payload: id
+            payload: true
         });
 
         try {

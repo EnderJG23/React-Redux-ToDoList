@@ -34,21 +34,21 @@ export default (state = initialState, action) => {
         case INITIAL_DELETE_TASK:
             return {
                 ...state,
-                loading: action.payload
+                Loading: action.payload
             }
         case SUCCESS_GET_TASKS:
             return {
                 ...state,
                 TasksIncomplete : action.payload.filter(task => task.pending ), 
                 TasksComplete : action.payload.filter(task => !task.pending ),
-                loading: false            
+                Loading: false            
             }
         case SUCCESS_ADD_TASK:
             return {
                 ...state,
                 TasksIncomplete : [ action.payload, ...state.TasksIncomplete ],
                 TaskError: null,
-                loading: false
+                Loading: false
             }
         case SUCCESS_SELECT_TASK:
             return {
@@ -61,7 +61,7 @@ export default (state = initialState, action) => {
                 ...state,
                 TasksIncomplete : state.TasksIncomplete.map(task => task.id === action.payload.id ? action.payload : task),
                 TaskError: null,
-                loading: false
+                Loading: false
             }
         case DELETE_TASK_SUCCESS:
             return {
@@ -69,7 +69,7 @@ export default (state = initialState, action) => {
                 TasksComplete : state.TasksComplete.filter(task => task.id !== action.payload),
                 TaskActive : ( state.TaskActive !==null && state.TaskActive.id === action.payload ? null: state.TaskActive),
                 TaskError: null,
-                loading: false
+                Loading: false
             }
         case ERROR_GET_TASKS:
         case ERROR_ADD_TASK:
@@ -79,13 +79,13 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 TaskError: action.payload,
-                loading: false
+                Loading: false
             }
         case REMOVE_TASK_ERROR:
             return {
                 ...state,
                 TaskError: null,
-                loading: false
+                Loading: false
             }
         default:
             return state;
