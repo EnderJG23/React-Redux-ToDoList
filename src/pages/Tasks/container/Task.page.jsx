@@ -22,7 +22,7 @@ const TaskPage = () => {
             setloading(false);
         }, 2000);
         // eslint-disable-next-line
-    }, []);
+    }, [ TasksIncomplete, TasksComplete ]);
 
 
     return (

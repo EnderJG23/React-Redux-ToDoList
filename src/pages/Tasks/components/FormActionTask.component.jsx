@@ -31,6 +31,9 @@ const FormActionTask = () => {
         e.preventDefault(); 
         if (task && task.length === 0) return;
         AddTask(task);
+        saveTask({
+            taskName: ""
+        });
     };
 
     const handleOnChange = (e) => {

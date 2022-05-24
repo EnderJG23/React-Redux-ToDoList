@@ -1,21 +1,9 @@
 {
   "tasks": [
     {
-      "date": "24-05-2022",
-      "taskName": "tarea 1",
-      "pending": false,
-      "id": "68a8fdf-ca6-8ba4-f08a-68080e5a3742"
-    },
-    {
-      "date": "23-05-2022",
-      "taskName": "tarea 1",
-      "pending": false,
-      "id": "f7b106e-bca6-7fbf-e68d-6fab0da274b3"
-    },
-    {
       "date": "22-05-2022",
       "taskName": "tarea 1",
-      "pending": true,
+      "pending": false,
       "id": "e00faa7-bcf4-ee54-8c66-3acb1f0ec"
     },
     {
@@ -23,6 +11,24 @@
       "id": "a54e451-d87a-d242-53b8-2cff2334a868",
       "pending": true,
       "date": "2-4-2022 19:21"
+    },
+    {
+      "taskName": "hola cocosods",
+      "id": "0ec10a-c281-e417-cc4e-7a4ad3fc767d",
+      "pending": true,
+      "date": "2-4-2022 19:25"
+    },
+    {
+      "taskName": "hola cocosods",
+      "id": "11d53a-d25d-168-1ca8-5f8537dd6dad",
+      "pending": true,
+      "date": "2-4-2022 19:25"
+    },
+    {
+      "taskName": "dsgdfg",
+      "id": "503faf7-1dd-56e4-8dfb-fda2126f600d",
+      "pending": false,
+      "date": "2-4-2022 19:27"
     }
   ]
 }

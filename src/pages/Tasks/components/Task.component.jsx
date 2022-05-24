@@ -5,16 +5,13 @@ import { deleteTask, updateTask, selectTaskEdit } from '../../../redux/actions/t
 const Task = ({ data }) => {
 
     const dispatch = useDispatch();
-
-    const DeleteTask = () => dispatch( deleteTask() ); 
-    const UpdateTask = () => dispatch( updateTask() ); 
     const SelectTaskEdit = () => dispatch( selectTaskEdit() ); 
     
 
     const handleStatusTask = (taskInfo) => {
         if (taskInfo.pending) taskInfo.pending = false;
         else taskInfo.pending = true;               
-        UpdateTask(taskInfo);
+        dispatch( updateTask(taskInfo) );
     }
 
     return ( 
@@ -37,9 +34,9 @@ const Task = ({ data }) => {
             :
                 <span>
                     <button
-                        onClick={ () => DeleteTask(data.id) }
+                        onClick={ () => dispatch( deleteTask(data.id)) }
                         type='button' 
-                    >Eliminar { data.id }
+                    >Eliminar
                     </button>
                 </span>
             }
