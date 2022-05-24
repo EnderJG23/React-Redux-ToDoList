@@ -1,0 +1,22 @@
+{
+    "tasks": [
+      {
+        "date": "24-05-2022",
+        "taskName": "tarea 1",
+        "pending": false,
+        "id": "68a8fdf-ca6-8ba4-f08a-68080e5a3742"
+      },
+      {
+        "date": "23-05-2022",
+        "taskName": "tarea 1",
+        "pending": false,
+        "id": "f7b106e-bca6-7fbf-e68d-6fab0da274b3"
+      },
+      {
+        "date": "22-05-2022",
+        "taskName": "tarea 1",
+        "pending": true,
+        "id": "e00faa7-bcf4-ee54-8c66-3acb1f0ec"
+      }
+    ]
+  }
