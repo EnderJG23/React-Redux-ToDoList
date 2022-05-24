@@ -7,7 +7,7 @@ const FormActionTask = () => {
 
     const dispatch = useDispatch();
 
-    const AddTask = () => dispatch( addTask() );
+    const AddTask = (task) => dispatch( addTask(task) );
     const TasksActive = useSelector(state => state.tasks.TaskActive); 
 
     const [ textAction, changeTextAction ] = useState(null);

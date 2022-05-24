@@ -37,9 +37,9 @@ const Task = ({ data }) => {
             :
                 <span>
                     <button
-                        onClick={ () => DeleteTask(data._id) }
+                        onClick={ () => DeleteTask(data.id) }
                         type='button' 
-                    >Eliminar
+                    >Eliminar { data.id }
                     </button>
                 </span>
             }

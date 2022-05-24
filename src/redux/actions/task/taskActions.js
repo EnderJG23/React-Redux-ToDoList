@@ -24,16 +24,19 @@ export const addTask = task => {
     
     return async (dispatch) => {
 
-        dispatch({
-            type: INITIAL_ADD_TASK,
-            payload: true
-        });
+        try {
+            dispatch({
+                type: INITIAL_ADD_TASK,
+                payload: true
+            });
         
-        try {            
+                    
             let dateAt = new Date();
             task.id = uuid();
             task.pending = true;
             task.date = `${dateAt.getUTCDay()}-${dateAt.getMonth()}-${dateAt.getUTCFullYear()} ${dateAt.getUTCHours()}:${dateAt.getUTCMinutes()}`;
+            console.log('task', task);
+
             await clienteAxios.post( '/' , task);                       
             dispatch({
                 type: SUCCESS_ADD_TASK,
@@ -67,7 +70,7 @@ export const getTasks = () => {
         });
 
         try {
-            const result = await clienteAxios.get('/tasks');
+            const result = await clienteAxios.get('/');
             dispatch({
                 type: SUCCESS_GET_TASKS,
                 payload: result.data
@@ -88,7 +91,7 @@ export const getTasks = () => {
 }
 
 export const deleteTask = (id) => {
-    
+
     return async (dispatch) => {        
         dispatch({
             type: INITIAL_DELETE_TASK,
