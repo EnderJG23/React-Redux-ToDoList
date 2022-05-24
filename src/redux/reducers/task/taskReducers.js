@@ -60,6 +60,7 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 TasksIncomplete : state.TasksIncomplete.map(task => task.id === action.payload.id ? action.payload : task),
+                TaskActive : null,
                 TaskError: null,
                 Loading: false
             }

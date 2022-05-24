@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from '@emotion/styled';
-import { addTask } from '../../../redux/actions/task/taskActions';
+import { addTask, updateTask, deleteSelectTaskEdit } from '../../../redux/actions/task/taskActions';
 
 const FormActionTask = () => {
 
     const dispatch = useDispatch();
 
-    const AddTask = (task) => dispatch( addTask(task) );
     const TasksActive = useSelector(state => state.tasks.TaskActive); 
 
     const [ textAction, changeTextAction ] = useState(null);
@@ -24,13 +23,19 @@ const FormActionTask = () => {
 
     const getActionForm = ( type ) => {
         if (!type) changeTextAction('Agregar Tarea');
-        if (type) changeTextAction('Editar Tarea');
+        if (type) {
+            changeTextAction('Editar Tarea');
+            saveTask(TasksActive);
+        }
+
     };
 
     const handleOnSubmit = (e) => {
         e.preventDefault(); 
         if (!taskName || taskName.trim().length === 0) return;
-        AddTask(task);
+        if (!TasksActive) dispatch( addTask(task) );
+        else dispatch( updateTask(task) );
+
         saveTask({
             taskName: ""
         });
@@ -40,7 +45,9 @@ const FormActionTask = () => {
         saveTask({ 
             ...task,
             [e.target.name]: e.target.value
-        });                
+        });    
+        
+        if (!e.target.name || e.target.name.trim().length === 0) dispatch( deleteSelectTaskEdit(TasksActive) );
     };
     
     return ( 

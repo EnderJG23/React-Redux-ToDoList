@@ -5,7 +5,7 @@ import { deleteTask, updateTask, selectTaskEdit } from '../../../redux/actions/t
 const Task = ({ data }) => {
 
     const dispatch = useDispatch();
-    const SelectTaskEdit = () => dispatch( selectTaskEdit() ); 
+    const SelectTaskEdit = (data) => dispatch( selectTaskEdit(data) ); 
     
 
     const handleStatusTask = (taskInfo) => {
