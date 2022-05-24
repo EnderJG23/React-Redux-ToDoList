@@ -29,7 +29,7 @@ const FormActionTask = () => {
 
     const handleOnSubmit = (e) => {
         e.preventDefault(); 
-        if (task && task.length === 0) return;
+        if (!taskName || taskName.trim().length === 0) return;
         AddTask(task);
         saveTask({
             taskName: ""
